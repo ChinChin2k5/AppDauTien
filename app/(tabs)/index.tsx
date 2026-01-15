@@ -7,16 +7,13 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-      {/* Tiêu đề */}
       <Text style={styles.title}>Đăng Nhập</Text>
       
-      {/* Label */}
       <Text style={styles.label}>Nhập Số Điện Thoại:</Text>
       <Text style={styles.label}>Dùng Số Điện Thoại Để Đăng Nhập Hoặc Đăng Ký Tài Khoản Trên Redmi Turbo 4:</Text>
 
 
       
-      {/* Ô nhập liệu */}
       <TextInput 
         style={styles.input}
         placeholder="Nhập số điện thoại của bạn..."
@@ -25,7 +22,6 @@ export default function HomeScreen() {
         onChangeText={setPhone} 
       />
       
-      {/* Nút bấm (Button chuẩn của React Native) */}
       <Button 
         title="Tiếp Tục" 
         onPress={() => Alert.alert("Thông báo", "Số vừa nhập: " + phone)} 
@@ -36,17 +32,15 @@ export default function HomeScreen() {
   );
 }
 
-// 2. StyleSheet dùng để trang trí (CSS)
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#fff',
-    // Dòng này fix lỗi cho Android (vì SafeAreaView trên Android đôi khi không tự đẩy xuống)
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   container: {
-    flex: 1, // Quan trọng: Bung full màn hình
-    backgroundColor: '#fff', // Màu nền trắng
+    flex: 1, 
+    backgroundColor: '#fff', 
     padding: 20,
   },
   title: {
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
-    width: '100%', // Rộng 100% màn hình
+    width: '100%', 
     padding: 15,
     marginBottom: 20,
     fontSize: 18
